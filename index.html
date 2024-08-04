@@ -7,46 +7,86 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <!-- Navigation -->
+    <nav>
+        <img src="assets/logo.png" alt="Astralitha Logo" class="logo">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#forum">Forum</a></li>
+        </ul>
+    </nav>
+
+    <!-- Homepage -->
+    <section id="home">
         <h1>Welcome to Astralitha</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main id="home">
-        <section>
-            <h2>Creative Studio</h2>
-            <p>Your one-stop destination for anime, editing, 3D modeling, and 2D animation.</p>
-        </section>
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <!-- Add your portfolio items here -->
-        </section>
-        <section id="blog">
-            <h2>Blog</h2>
-            <!-- Add your blog posts here -->
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message"></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
+        <p>Your creative hub for anime, 3D modeling, and more!</p>
+        <div class="slider">
+            <div class="slide"><img src="assets/slider1.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="assets/slider2.jpg" alt="Slide 2"></div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="images/portfolio1.jpg" alt="Portfolio Item 1"></div>
+            <div class="gallery-item"><img src="images/portfolio2.jpg" alt="Portfolio Item 2"></div>
+            <!-- Add more gallery items as needed -->
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog">
+        <h2>Blog</h2>
+        <div class="blog-posts">
+            <div class="blog-post">
+                <img src="images/blog-post1.jpg" alt="Blog Post 1">
+                <h3>Blog Post Title</h3>
+                <p>Summary of the blog post...</p>
+                <a href="#">Read More</a>
+            </div>
+            <!-- Add more blog posts as needed -->
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Forum -->
+    <section id="forum">
+        <h2>Forum</h2>
+        <div class="forum-discussions">
+            <!-- Add forum discussions or community features here -->
+            <div class="discussion">
+                <h3>Discussion Title</h3>
+                <p>Summary of the discussion...</p>
+                <a href="#">Join Discussion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Astralitha. All rights reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
