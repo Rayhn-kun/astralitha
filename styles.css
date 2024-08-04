@@ -1,47 +1,203 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #1e1e2e;
-    color: #ffffff;
+/* Resetting margin and padding */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #282a36;
-    padding: 20px;
-    text-align: center;
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #1a1a1a;
+    line-height: 1.6;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    height: 50px;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    gap: 15px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-    font-size: 1.2em;
 }
 
-section {
+/* Homepage */
+#home {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('images/background.jpg') no-repeat center center/cover;
+    position: relative;
+    color: #fff;
+}
+
+#home h1 {
+    font-size: 3em;
+    color: #00bcd4;
+}
+
+#home p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Slider Controls */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Portfolio */
+#portfolio {
     padding: 20px;
-    margin: 20px;
-    border: 1px solid #44475a;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #333;
     border-radius: 10px;
 }
 
+/* Blog */
+#blog {
+    padding: 20px;
+}
+
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-post {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-post a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+/* Contact Form */
+#contact {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #00bcd4;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Forum */
+#forum {
+    padding: 20px;
+}
+
+.discussion {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.discussion a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+/* Footer */
 footer {
+    background-color: #222;
+    color: #aaa;
     text-align: center;
     padding: 10px;
-    background-color: #282a36;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
