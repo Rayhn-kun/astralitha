@@ -5,81 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astralitha</title>
     <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astralitha</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        iframe {
-            border: none;
-            width: 100%;
-            height: 600px; /* Sesuaikan tinggi sesuai kebutuhan */
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <img src="assets/logo.png" alt="Astralitha Logo" class="logo">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#forum">Forum</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>Astralitha</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Homepage -->
-    <section id="home">
-        <h1>Welcome to Astralitha</h1>
-        <p>Your creative hub for anime, 3D modeling, and more!</p>
-        <div class="slider">
-            <div class="slide"><img src="assets/slider1.jpg" alt="Slide 1"></div>
-            <div class="slide"><img src="assets/slider2.jpg" alt="Slide 2"></div>
-            <button class="prev">&#10094;</button>
-            <button class="next">&#10095;</button>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Astralitha</h2>
+            <p>Explore the creative universe of 3D modeling, animation, and art.</p>
+            <a href="#portfolio" class="btn">View Portfolio</a>
         </div>
     </section>
 
-    <!-- Portfolio -->
     <section id="portfolio">
         <h2>Portfolio</h2>
         <div class="gallery">
-            <div class="gallery-item"><img src="images/portfolio1.jpg" alt="Portfolio Item 1"></div>
-            <div class="gallery-item"><img src="images/portfolio2.jpg" alt="Portfolio Item 2"></div>
-            <!-- Add more gallery items as needed -->
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300x200" alt="Portfolio Item 1">
+                <p>3D Model 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300x200" alt="Portfolio Item 2">
+                <p>3D Model 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300x200" alt="Portfolio Item 3">
+                <p>Animation 1</p>
+            </div>
         </div>
     </section>
 
-    <!-- Blog -->
     <section id="blog">
         <h2>Blog</h2>
-        <div class="blog-posts">
-            <div class="blog-post">
-                <img src="images/blog-post1.jpg" alt="Blog Post 1">
-                <h3>Blog Post Title</h3>
-                <p>Summary of the blog post...</p>
-                <a href="#">Read More</a>
-            </div>
-            <!-- Add more blog posts as needed -->
-        </div>
+        <article class="blog-post">
+            <h3>Blog Post Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna vitae augue consequat gravida.</p>
+        </article>
+        <article class="blog-post">
+            <h3>Another Blog Post</h3>
+            <p>Curabitur ac ligula vel libero blandit aliquam. Phasellus auctor sem ut metus fermentum, et viverra quam varius.</p>
+        </article>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <form>
+        <form id="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             <label for="email">Email:</label>
@@ -90,28 +72,22 @@
         </form>
     </section>
 
-    <!-- Forum -->
-    <section id="forum">
-        <h2>Forum</h2>
-        <div class="forum-discussions">
-            <!-- Add forum discussions or community features here -->
-            <div class="discussion">
-                <h3>Discussion Title</h3>
-                <p>Summary of the discussion...</p>
-                <a href="#">Join Discussion</a>
-            </div>
+    <section id="community">
+        <h2>Community Forum</h2>
+        <div class="forum">
+            <p>Discussion board coming soon!</p>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="3d-model">
+        <h2>3D Model Showcase</h2>
+        <iframe src="YOUR_SPLINE_IFRAME_URL" frameborder="0" width="100%" height="500px" allowfullscreen></iframe>
+    </section>
+
     <footer>
         <p>&copy; 2024 Astralitha. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
-    <div class="container">
-        <h1>Welcome to Astralitha</h1>
-        <iframe src="https://build.spline.design/aZHh7aLq4tFl-92DMFAx/scene.splineswift"></iframe>
-    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
