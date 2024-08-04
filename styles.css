@@ -158,3 +158,19 @@ footer {
     text-align: center;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
 }
+#scroll-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #1e90ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none; /* Default hidden */
+}
+
+#scroll-top:hover {
+    background: #1c86ee;
+}
