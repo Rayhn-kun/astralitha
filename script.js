@@ -35,3 +35,19 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Thank you for your message!');
 });
+// Scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+// Show/hide scroll to top button
+window.addEventListener('scroll', function() {
+    const scrollTopButton = document.getElementById('scroll-top');
+    if (window.scrollY > 300) {
+        scrollTopButton.style.display = 'block';
+    } else {
+        scrollTopButton.style.display = 'none';
+    }
+});
