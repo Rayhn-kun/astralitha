@@ -17,3 +17,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Adding a simple animation to the hero section on scroll
+document.addEventListener('scroll', function() {
+    const hero = document.querySelector('.hero-content');
+    const scrollPosition = window.scrollY;
+    hero.style.opacity = 1 - (scrollPosition / 500); // Simple fade effect
+});
+// Smooth scroll to sections
+function scrollToSection(id) {
+    document.querySelector(id).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Handle contact form submission
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message!');
+});
