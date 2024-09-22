@@ -10,7 +10,8 @@ header {
     background: linear-gradient(135deg, #1a1b4a, #2b2d52);
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    animation: slideIn 1s ease-out;
 }
 
 header h1 {
@@ -19,38 +20,84 @@ header h1 {
     background: linear-gradient(to right, #f0f, #0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 15px #0ff, 0 0 20px #0ff;
+    }
+    to {
+        text-shadow: 0 0 10px #f0f, 0 0 20px #f0f, 0 0 30px #0ff, 0 0 40px #0ff;
+    }
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
+    position: relative;
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+nav ul li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    transition: color 0.3s;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
     color: #ff0;
+    transform: scale(1.1);
 }
 
 .hero {
     height: 100vh;
-    background: url('background.jpg') no-repeat center center/cover;
+    background: url('ohsyuiq. [621B1DF].png') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+    overflow: hidden;
+    animation: zoomIn 1s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .hero-content h2 {
@@ -58,10 +105,30 @@ nav ul li a:hover {
     background: linear-gradient(to right, #f0f, #0ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: textGlow 1.5s infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 15px #0ff, 0 0 20px #0ff;
+    }
+    to {
+        text-shadow: 0 0 10px #f0f, 0 0 20px #f0f, 0 0 30px #0ff, 0 0 40px #0ff;
+    }
 }
 
 .hero-content p {
     font-size: 1.2em;
+    animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .btn {
@@ -73,11 +140,13 @@ nav ul li a:hover {
     border-radius: 5px;
     font-weight: bold;
     margin-top: 20px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .btn:hover {
     background: linear-gradient(135deg, #0ff, #f0f);
+    transform: translateY(-5px);
 }
 
 section {
@@ -89,14 +158,17 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.5s ease-in-out, transform 0.3s ease, filter 0.3s ease;
 }
 
 .gallery-item img {
@@ -104,22 +176,26 @@ section {
     height: auto;
     display: block;
     transition: transform 0.3s ease;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background: rgba(0, 0, 0, 0.3);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
 .blog-post {
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     margin: 10px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
 }
 
 form {
@@ -129,7 +205,13 @@ form {
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+form:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: scale(1.02);
 }
 
 form label {
@@ -140,6 +222,12 @@ form input, form textarea {
     padding: 10px;
     border: none;
     border-radius: 5px;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    background: #333;
+    border: 1px solid #f0f;
 }
 
 form button {
@@ -150,27 +238,190 @@ form button {
     color: #fff;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #0ff, #f0f);
+    transform: translateY(-3px);
 }
 
 footer {
     background: linear-gradient(135deg, #1a1b4a, #2b2d52);
     padding: 20px;
     text-align: center;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.7);
+    transition: background 0.3s ease, transform 0.3s ease;
 }
+
+footer:hover {
+    background: linear-gradient(135deg, #2b2d52, #1a1b4a);
+    transform: scale(1.02);
+}
+
 #scroll-top {
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #954caf;
+    color: #f4ade0;
     border: none;
-    background: #1e90ff;
-    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
     cursor: pointer;
-    border-radius: 5px;
-    display: none; /* Default hidden */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
 }
 
 #scroll-top:hover {
-    background: #1c86ee;
+    background-color: #8f3296;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#cursor-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+}
+
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('1722772323298.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.parallax-section .content {
+    text-align: center;
+    z-index: 1;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gradient-section {
+    padding: 60px;
+    background: linear-gradient(45deg, #9f41e2, #9e4def);
+    color: #fff;
+    border-radius: 15px;
+    transition: background 0.5s ease-in-out, transform 0.3s ease-in-out;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gradient-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: opacity 0.5s ease;
+}
+
+.gradient-section:hover::before {
+    opacity: 0.5;
+}
+
+.gradient-section:hover {
+    background: linear-gradient(45deg, #830ea4, #7a089a);
+    transform: scale(1.05);
+}
+
+.blur-pop-section {
+    padding: 60px;
+    background: rgba(39, 7, 64, 0.8);
+    color: #c08adb;
+    border-radius: 15px;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blur-pop-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blur-pop-section:hover::before {
+    opacity: 0.3;
+}
+
+.blur-pop-section:hover {
+    transform: scale(1.1);
+    filter: blur(0);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.rotate-section {
+    padding: 60px;
+    background: rgba(57, 16, 82, 0.9);
+    color: #fff;
+    border-radius: 15px;
+    perspective: 1000px;
+    text-align: center;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.rotate-section:hover {
+    transform: rotateY(15deg) rotateX(15deg);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('stars-bg.png') repeat;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
 }
