@@ -1,2 +1,5 @@
 node_modules/
 *.local
+*.json
+*.env
+astralitha-moonmars-firebase-adminsdk-fbsvc-2b09df4411.json
