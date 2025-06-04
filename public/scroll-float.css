@@ -1,0 +1,27 @@
+/* ScrollFloat effect for HTML (mirip React+GSAP ScrollFloat) */
+.scroll-float {
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  font-size: clamp(1.6rem, 8vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin: 2.5rem 0 1.5rem 0;
+  color: #fff;
+  background: linear-gradient(90deg, #a78bfa 0%, #7f5af0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.scroll-float .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(120%) scaleY(2.3) scaleX(0.7);
+  transition: opacity 0.5s cubic-bezier(.23,1.01,.32,1),
+              transform 0.7s cubic-bezier(.23,1.01,.32,1);
+  will-change: opacity, transform;
+}
+.scroll-float .char-in {
+  opacity: 1;
+  transform: translateY(0) scaleY(1) scaleX(1);
+}

@@ -1,0 +1,475 @@
+ 
+ 
+ASTRA-MARS COMPETITION BLUEPRINT 
+Innovative Space Rescue System 
+ 
+I. ABSTRACT 
+The ASTRA-MARS rescue system introduces a revolutionary hybrid approach to 
+astronaut rescue operations, combining an autonomous drone (Diacopter) with a mobile 
+life-support rover. This integrated system utilizes advanced thermal scanning, radar 
+technology, and a Rocky-Bogie suspension system to navigate extreme planetary 
+terrain. The design emphasizes sustainability through reusable launch systems and 
+modular components, significantly reducing both operational costs and space debris. 
+ 
+II. TEAM INFORMATION 
+A. Core Team Members 
+• 
+Team Leader: 
+Anandandhy Arif Baghaskara 
+SMA Negeri 24 Bandung 
+📧 baghaskara09@gmail.com 
+• 
+Team Member: 
+Rayhan Muammar Khadafi 
+SMA Negeri 24 Bandung 
+📧 rayhanmuammarkhadafi@gmail.com 
+B. Academic Advisor 
+• 
+Jajang Wahyudin 
+SMA Negeri 24 Bandung 
+📧 jajangwahyudina@gmail.com 
+ 
+III. COMPETITION CATEGORY 
+• 
+Division: STEM 
+• 
+Sub-division: Creativity II 
+• 
+Level: X-XII (SMA) 
+• 
+Type: Invention & Maker 
+ 
+2 
+ 
+ 
+IV. TEAM QUALIFICATIONS 
+A. Technical Expertise 
+• 
+Team Leader: 
+Specialized in 3D design & abstract conceptualization; extensive IT background. 
+• 
+Team Member: 
+Experienced in STEM competitions; excels in innovative problem-solving. 
+ 
+V. TECHNICAL SOLUTION 
+A. System Components 
+1. Diacopter Drone System 
+• 
+Integrated radar and thermal scanning 
+• 
+Advanced detection algorithms 
+• 
+Autonomous navigation systems 
+2. Mobile Life-Support Rover 
+• 
+Rocky-Bogie system 
+• 
+Specialized titanium wheel design 
+• 
+Extreme terrain adaptation 
+B. Integration Architecture 
+• 
+[Technical diagram to be inserted] 
+Figure 1: System Architecture Diagram 
+ 
+VI. IMPLEMENTATION STRATEGY 
+A. Launch System 
+• 
+Utilizes reusable rocket system and lightweight modular lander, ensuring: 
+1. Reduced carbon footprint 
+2. Minimized space debris 
+3. Cost-effective deployment 
+4. Sustainable resource utilization 
+ 
+ 
+3 
+ 
+VII. REFERENCES 
+I. JPL Mars Mission Documentation 
+II. NASA EarthData Resources 
+III. Ingenuity Technical Specifications 
+IV. SCIP Innovation Reports 
+V. NASA Glenn Research Center Studies 
+ 
+VIII. TECHNICAL SPECIFICATIONS & ANALYSIS 
+A. Drone System ("Phoenix Wing") 
+1. Propulsion Configuration 
+• 
+Mars: 
+o Twin rotor system (1.5m diameter), 3000 RPM 
+o Based on Ingenuity NASA adaptation 
+• 
+Moon: 
+o Liquid nitrogen pendulum thruster 
+o Max hop: 50m; zero-atmosphere optimized 
+2. Sensor Suite 
+• 
+FLIR Thermal Camera Array: 
+o Temp range: -40°C 
+o Resolution: 640 × 512 px 
+• 
+Ultra-Wideband Radar: 
+o Range: 5m (through debris) 
+o Breath detection capability 
+B. Rover System ("Titan Crawler") 
+1. Mobility Features 
+• 
+Rocker-Bogie suspension (kneeling up to 25cm) 
+• 
+NiTi superelastic wheels (60cm, origami treads) 
+2. Rescue Equipment 
+• 
+Kevlar-Nomex Origami Pod (compression: 15cm³–1m³, max load: 200kg-force) 
+• 
+Neodymium magnetic attachment 
+ 
+ 
+4 
+ 
+IX. PERFORMANCE METRICS 
+A. System Specifications 
+Component 
+Specs 
+Duration 
+Phoenix Wing Drone Mass: 3kg; Power: 500W 45 min 
+Titan Crawler 
+Size: 1.5x1x0.8m 
+Continuous 
+Rescue Pod 
+1 astronaut capacity 
+30 sec deployment 
+B. Communication Architecture 
+• 
+StarLink-Mini P2P: 
+o Frequency: 2.4 GHz 
+o Data: Laser-based 
+o Range: 5km 
+o Security: AES-256 encryption 
+ 
+X. COST & SUSTAINABILITY ANALYSIS 
+A. Component Cost Breakdown 
+Component 
+Cost (USD) 
+ 
+NiTi Wheel System (4 
+units) 
+12,000 
+ 
+Li-Fi Sensor Array 
+8,500 
+ 
+Flexible Solar Panels 
+4,200 
+ 
+Total 
+38,000 
+ 
+B. Sustainability Features 
+1. Material Selection 
+• 
+Recycled 6061 aluminum frame 
+• 
+Corn-based bioplastic parts 
+• 
+Modular for easy maintenance 
+2. Energy Management 
+• 
+30% power reduction 
+• 
+AI-driven optimization (Q-learning algorithm) 
+ 
+ 
+5 
+ 
+XI. APPENDICES 
+Appendix A: Technical Drawings 
+• 
+[Insert technical drawings here] 
+Figure A1: Drone Propulsion System Schematic 
+Figure A2: Rover Suspension Design 
+Appendix B: Test Results 
+• 
+[Insert test results/data here] 
+Table B1: Performance Testing Data 
+Table B2: Environmental Simulation Results 
+ASTRA-MARS COMPETITION BLUEPRINT __________________________________________ 1 
+I. ABSTRACT __________________________________________________________________ 1 
+II. TEAM INFORMATION ________________________________________________________ 1 
+A. Core Team Members ______________________________________________________ 1 
+B. Academic Advisor ________________________________________________________ 1 
+III. COMPETITION CATEGORY __________________________________________________ 1 
+IV. TEAM QUALIFICATIONS _____________________________________________________ 2 
+A. Technical Expertise _______________________________________________________ 2 
+V. TECHNICAL SOLUTION______________________________________________________ 2 
+A. System Components _____________________________________________________ 2 
+1. Diacopter Drone System ________________________________________________ 2 
+2. Mobile Life-Support Rover _______________________________________________ 2 
+B. Integration Architecture ___________________________________________________ 2 
+VI. IMPLEMENTATION STRATEGY _______________________________________________ 2 
+A. Launch System ___________________________________________________________ 2 
+VII. REFERENCES _____________________________________________________________ 3 
+VIII. TECHNICAL SPECIFICATIONS & ANALYSIS __________________________________ 3 
+A. Drone System ("Phoenix Wing") ____________________________________________ 3 
+1. Propulsion Configuration ________________________________________________ 3 
+2. Sensor Suite ___________________________________________________________ 3 
+B. Rover System ("Titan Crawler")_____________________________________________ 3 
+1. Mobility Features _______________________________________________________ 3 
+ 
+6 
+ 
+2. Rescue Equipment _____________________________________________________ 3 
+IX. PERFORMANCE METRICS __________________________________________________ 4 
+A. System Specifications ____________________________________________________ 4 
+B. Communication Architecture ______________________________________________ 4 
+X. COST & SUSTAINABILITY ANALYSIS ___________________________________________ 4 
+A. Component Cost Breakdown ______________________________________________ 4 
+B. Sustainability Features ____________________________________________________ 4 
+1. Material Selection ______________________________________________________ 4 
+2. Energy Management ____________________________________________________ 4 
+XI. APPENDICES ______________________________________________________________ 5 
+Appendix A: Technical Drawings ______________________________________________ 5 
+Appendix B: Test Results _____________________________________________________ 5 
+PENDAHULUAN ______________________________________________________________ 6 
+LATAR BELAKANG _____________________________________________________________ 6 
+TUJUAN ______________________________________________________________________ 7 
+FUNGSI & CARA KERJA PRODUK _______________________________________________ 7 
+ISI/PEMBAHASAN _____________________________________________________________ 7 
+a. Deskripsi Produk _________________________________________________________ 7 
+b. Konsep Sains & Matematika _______________________________________________ 8 
+c. Desain Produk ____________________________________________________________ 9 
+Tabel Spesifikasi Ringkas __________________________________________________ 9 
+KESIMPULAN & REKOMENDASI ________________________________________________ 9 
+REFERENSI & LAMPIRAN _____________________________________________________ 10 
+ 
+PENDAHULUAN 
+Ekspedisi antariksa manusia terus dikembangkan, sehingga diperlukan sistem 
+keselamatan dan penyelamatan yang andal bila terjadi situasi darurat. ASTRA-MARS 
+merupakan rancangan sistem penyelamatan luar angkasa terpadu untuk misi di Mars (atau 
+Titan), yang menggabungkan berbagai perangkat canggih. Sistem ini meliputi drone 
+pengintai (Phoenix Wing), rover berat (Titan Crawler), dan pod penyelamat lipat (Origami 
+Rescue Pod), didukung oleh komunikasi cahaya Li-Fi, navigasi otonom berbasis AI, dan 
+peluncuran roket modular yang dapat digunakan ulang. Rancangan ini mengadopsi teknologi 
+mutakhir seperti roda NiTi superelastis untuk medan keras, radar UWB/SAR untuk deteksi 
+ 
+7 
+ 
+medan, kamera termal, suspensi kneeling, serta mini-MOXIE untuk menghasilkan oksigen 
+dari atmosfer Mars. Selain itu, aspek keberlanjutan diperhatikan melalui penggunaan material 
+daur ulang, panel surya, dan efisiensi emisi CO₂. Sistem ASTRA-MARS dirancang untuk 
+menyelamatkan astronot dalam kecelakaan antariksa, menggabungkan inovasi teknik, sains, 
+dan matematika dalam sebuah solusi komprehensif. 
+LATAR BELAKANG 
+Penjelajahan Mars dan lingkungan antariksa lain (misalnya Bulan atau Titan) 
+menyisakan risiko tinggi bagi kru manusia. Meski saat ini robot penjelajah (seperti NASA 
+Curiosity atau Perseverance) dan helikopter kecil Mars Ingenuity telah terbukti mengatasi 
+medan ekstrim, misi dengan awak manusia memerlukan sistem keselamatan aktif. Contoh 
+keberhasilan teknologi antara lain helikopter Mars Ingenuity yang berhasil terbang otonom 
+pada atmosfer tipis Mars dan sistem AutoNav pada rover Perseverance yang memetakan 
+medan 3D untuk navigasi otonom. Selain itu, riset NASA pada ban superelastis (NiTi) 
+menunjukkan bahwa paduan logam memori bentuk memungkinkan roda menahan deformasi 
+ekstrem tanpa kerusakan. Penelitian komunikasi optik (Li-Fi) NASA juga mengindikasikan 
+potensi jaringan cahaya LED untuk komunikasi berkecepatan tinggi di pesawat ruang 
+angkasa menuju Mars. Berdasarkan latar ini, sistem ASTRA-MARS dikembangkan 
+menggabungkan teknologi-teknologi terkini untuk misi penyelamatan antariksa, sekaligus 
+memerhatikan aspek lingkungan dan keberlanjutan. 
+TUJUAN 
+Laporan ini bertujuan menyajikan rancangan teknis lengkap ASTRA-MARS, sebuah 
+sistem penyelamatan antariksa kategori Mechatronics tingkat SMA. Tujuan khususnya 
+adalah: 
+1. Merumuskan fungsi utama dan cara kerja sistem penyelamatan Mars 
+2. Mendeskripsikan komponen utama (Drone Phoenix Wing, Rover Titan Crawler, 
+Origami Rescue Pod, Li-Fi, navigasi AI, roket reuse), dengan teknologi pendukung 
+(roda NiTi, radar UWB/SAR, kamera termal, suspensi kneeling, mini-MOXIE ISRU) 
+3. Menganalisis konsep sains/matematika yang mendasari desain 
+4. Mengilustrasikan simulasi (misalnya ANSYS) dan spesifikasi teknis 
+5. Menilai inovasi, keunggulan kompetitif, dan keberlanjutan (material daur ulang, 
+energi surya, emisi CO₂). 
+Laporan ini disusun sistematis sesuai standar ilmiah SMA Nasional, dilengkapi 
+referensi resmi (misalnya NASA dan jurnal ilmiah) untuk mendukung argumen. 
+FUNGSI & CARA KERJA PRODUK 
+ASTRA-MARS beroperasi sebagai sistem modular penyelamatan Mars. Tahap awal 
+dimulai dengan peluncuran roket berbahan bakar metana-LOX yang dapat didaur ulang 
+(mirip SpaceX Starship). Roket membawa ketiga modul utama: Drone Phoenix Wing, Rover 
+Titan Crawler, dan Origami Rescue Pod ke orbit Mars, lalu mendaratkannya secara 
+terkoordinasi. Setelah mendarat, Phoenix Wing Drone terbang otonom mengelilingi area 
+untuk pemetaan cepat, pencarian korban, dan pengantaran pasokan ringan menggunakan 
+kamera termal dan radar kecil. Bersamaan, Titan Crawler Rover bergerak menelusuri medan, 
+membawa peralatan berat dan pod penyelamat. Saat mencapai lokasi korban, Origami Rescue 
+ 
+8 
+ 
+Pod diluncurkan dan dikembangkan. Komunikasi data dan perintah antar modul 
+menggunakan teknologi Li-Fi (komunikasi cahaya LED). Navigasi otonom didukung sistem 
+AI yang memproses sensor (kamera, radar UWB/SAR, IMU). Sistem kneeling suspension 
+pada Rover Titan memungkinkan pengaturan ketinggian agar korban dapat mudah menaiki 
+pod. Seluruh operasi didukung energi terbarukan (panel surya pada drone/rover) dan sistem 
+ISRU mini-MOXIE di dalam pod untuk menghasilkan oksigen dari CO₂ Mars. 
+ISI/PEMBAHASAN 
+a. Deskripsi Produk 
+• 
+Drone Phoenix Wing: Drone bersayap karbon fiber, 6 rotor, berat 8–15 kg, 
+kamera termal, radar UWB, mini panel surya, komunikasi Li-Fi. 
+• 
+Rover Titan Crawler: Rover berat, 6 roda NiTi superelastis, suspensi kneeling, 
+lengan robotik, baterai + panel surya, sensor SAR/UWB/LiDAR. 
+• 
+Origami Rescue Pod: Pod lipat komposit karbon, filter CO₂, oksigen mini-MOXIE, 
+panel surya, komunikasi Li-Fi & RF, berat 20–30 kg. 
+• 
+Sistem Li-Fi: Jaringan cahaya LED antar modul, kecepatan 1–10 Gbps, bebas 
+interferensi RF. 
+• 
+Navigasi AI: SLAM, A*, sensor visual dan radar, algoritma jalur optimal. 
+• 
+Roket Reusable: Berdasarkan Starship, metana-LOX, reusable, emisi CO₂ 
+rendah. 
+b. Konsep Sains & Matematika 
+• 
+Aerodinamika drone: Gaya angkat rendah, rotor besar/cepat, power to weight 
+ratio. Aerodinamika dan Termodinamika Drone: Pada atmosfer Mars (tekanan 
+~1% Bumi), persamaan gaya angkat  menjadi kritis. Kepadatan udara  rendah 
+menuntut rotor berdiameter besar dan putaran sangat tinggi. Desain 6-rotor 
+dengan sayap tambahan meningkatkan  (koefisien angkat). Perhitungan power to 
+weight ratio memperhitungkan tenaga motor (W) untuk menghasilkan gaya 
+angkat mengatasi gaya berat. 
+• 
+Mekanika rover: Roda NiTi deformasi tinggi, sistem kneeling, distribusi beban, 
+lintasan tanjakan. Mekanika Rover dan Suspensi: Roda NiTi superelastis mampu 
+deformasi tinggi (hingga 10%) tanpa rusak. Studi (kajian kontak ban-rol) 
+menggunakan persamaan tekan  mempertimbangkan distribusi beban. Sistem 
+kneeling memanfaatkan mekanisme hidrolik/pneumatik sehingga sasis turun 
+naik—dapat dianalogikan seperti suspensi aktif mobil off-road. Untuk lintasan 
+menanjak, rumus dasar gerak roda di medan miring () digunakan dengan. 
+• 
+Radar UWB/SAR: Deteksi presisi tinggi, gelombang pendek, aperatur 
+sintetis.adar UWB/SAR: Radar UWB (Ultra-Wideband) memancarkan pulsa lebar 
+dan dapat menentukan jarak/beban target dengan presisi tinggi karena resolusi 
+waktu pendek. Prinsip gelombang elektromagnetik berlaku, waktu tempuh  
+pulsur dikonversi ke jarak (). Sedangkan radar SAR (Synthetic Aperture Radar) 
+menggunakan gerak relatif (rover/drone) untuk mensintesis aperture panjang, 
+memberikan resolusi tinggi pada pencitraan permukaan. Penerapan SAR 
+ 
+9 
+ 
+memungkinkan peta medan Mars dibuat kapan saja (siang/malam) tanpa 
+terpengaruh cuaca. 
+• 
+Kamera termal: Deteksi inframerah, hukum Stefan-Boltzmann.Kamera Termal: 
+Sensor termal menangkap radiasi inframerah obyek, digunakan untuk 
+mendeteksi korban manusia (tubuh ~37°C) pada siang/malam. Ini berdasarkan 
+hukum Stefan-Boltzmann (), memanfaatkan perbedaan suhu tubuh vs 
+lingkungan sekitar. 
+• 
+Navigasi AI: SLAM, A*, aljabar matriks, transformasi pose.Navigasi dan AI: 
+Sistem AI menggabungkan SLAM (Simultaneous Localization and Mapping) 
+menggunakan sensor visual/RGB-D dan UWB beresolusi tinggi. Perhitungan 
+koordinat dilakukan dengan aljabar matriks pose dan transformasi quaternions. 
+Algoritma A* atau D* dapat digunakan untuk perencanaan jalur optimal di grid 
+medan, memperhitungkan ketinggian dan penghalang. 
+• 
+Origami komposit: Material memori bentuk, simulasi tegangan ANSYS. Origami 
+Komposit: Desain Origami Rescue Pod mengacu pada riset NASA, di mana 
+struktur komposit polimer-serat karbon dikembangkan untuk penyimpanan dan 
+pelebaran bertahap. Prinsip fisika bentuk memori diterapkan: material dilatih 
+pada bentuk terbuka, kemudian dilipat di suhu rendah. Perhitungan tegangan 
+material (dari uji ANSYS) memastikan struktur memikul beban hingga 600 kg. 
+• 
+Energi & lingkungan: Efisiensi panel surya ~20%, MOXIE ISRU, perkiraan emisi 
+CO₂ roket.Energi dan Lingkungan: Panel surya digunakan untuk konversi cahaya 
+Matahari ( di Mars) menjadi listrik, dengan efisiensi  tipikal ~20%. Rumus 
+sederhana  menuntun desain luas panel. Sistem life support pod menggunakan 
+reaksi elektro-kimia MOXIE (asam karbonat terurai), persamaan kimia:  atau 
+karbon padat. Pada sisi emisi, kalkulasi CO₂ peluncuran roket 
+mempertimbangkan mass propelan metana yang terbakar (1 mol CH₄ → 1 mol 
+CO₂ + 2 mol H₂O). Data SpaceX menunjukkan satu peluncuran Starship 
+melepaskan ~76.000 ton CO₂ ekuivalen. Hal ini dikontraskan dengan 
+penggunaan bahan bakar ramah lingkungan dan reuse untuk mengurangi jejak 
+karbon. 
+c. Desain Produk 
+• 
+Rangka & material: Aluminium & karbon daur ulang, roda NiTi woven. 
+• 
+Suspensi: Independen/hidraulik, kneeling, simulasi ANSYS. 
+• 
+Pod origami: Polimer UV-curing, engsel pegas NiTi. 
+• 
+Sensor & komunikasi: LiDAR mini, UWB, Li-Fi, stasiun laser relay. 
+• 
+Energi & berkelanjutan: Panel surya fleksibel, baterai lithium, plastik daur 
+ulang, titanium. 
+• 
+Roket & inovasi: Starship/Super Heavy, 33 mesin Raptor, fly-back booster, 
+reusable. 
+• 
+Simulasi & verifikasi: ANSYS untuk rangka/roda, flight dynamics drone. 
+ 
+10 
+ 
+Tabel Spesifikasi Ringkas 
+Komponen 
+Berat 
+Daya 
+Dimensi (m) 
+Biaya (USD) 
+Drone Phoenix 
+Wing 
+~10 kg 
+~200 W 
+1,2×1,2×0,5 
+~5.000 
+Rover Titan 
+Crawler 
+~900 kg 
+~2 kW 
+3,0×2,5×1,5 
+~1.500.000 
+Origami Rescue 
+Pod 
+~20 kg 
+~50 W 
+2,0×1,5×1,0 (dilipat 
+0,5×0,5×0,3) 
+~20.000 
+Roket Reusable 
+~1.300.000 
+kg 
+Thrust 
+7.590 tf 
+120×9 (H×Ø) 
+~150.000.000 
+KESIMPULAN & REKOMENDASI 
+Sistem ASTRA-MARS menawarkan solusi komprehensif penyelamatan antariksa. Inovasi 
+utama: integrasi drone otonom, rover tangguh, pod lipat origami, roda NiTi superelastis, radar 
+UWB/SAR, kamera termal, komunikasi Li-Fi, dan AI navigasi. Keberlanjutan didukung 
+panel surya, bahan daur ulang, roket reusable. 
+Rekomendasi: pengembangan prototipe lab, optimasi algoritma AI, kajian material daur 
+ulang & pengurangan emisi karbon, simulasi tambahan, serta studi interoperabilitas modul 
+antar negara. 
+REFERENSI & LAMPIRAN 
+• 
+NASA, “Superelastic Tire (LEW-TOPS-99)”. 
+• 
+NASA, “Light Technology Being Developed for Advanced Communications”, 
+Kennedy Space Center. 
+• 
+NASA, “UWB Technology and Applications on Space Exploration”. 
+• 
+NASA Earthdata, “Synthetic Aperture Radar (SAR)”. 
+• 
+NASA JPL, “NASA’s Self-Driving Perseverance Mars Rover ‘Takes the Wheel’”. 
+• 
+NASA, “Ingenuity Mars Helicopter Succeeds in Historic First Flight”. 
+• 
+NASA JPL, “Mars Oxygen ISRU Experiment (MOXIE)”. 
+• 
+SpaceX, “Starship – SpaceX”. 
+• 
+Space.com, “How environmentally friendly is SpaceX’s Starship?” 
+• 
+NASA Langley, “Origami-based Deployable Fiber Reinforced Composites (LAR-
+TOPS-372)”. 
+Lampiran: Tabel spesifikasi teknis komponen utama ASTRA-MARS (berat, daya, dimensi, 
+biaya). 
+ 
+2025 Team ASTRA-MARS • Indonesia STEM Creativity Competition 
+ 

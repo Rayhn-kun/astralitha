@@ -1,0 +1,11 @@
+.metaballs-container {
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: linear-gradient(135deg, #181028 0%, #2d0066 100%);
+  opacity: 0.95;
+}

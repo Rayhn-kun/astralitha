@@ -1,0 +1,80 @@
+/* TiltedCard vanilla CSS */
+.tilted-card-figure {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  perspective: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.tilted-card-inner {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transition: transform 0.18s cubic-bezier(.23,1.01,.32,1);
+}
+.tilted-card-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 24px #a78bfa33;
+  will-change: transform;
+}
+.tilted-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: rgba(24,16,40,0.55);
+  border-radius: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s;
+}
+.tilted-card-figure:hover .tilted-card-overlay {
+  opacity: 1;
+}
+.tilted-card-caption {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 4px 10px;
+  font-size: 13px;
+  color: #2d2d2d;
+  opacity: 0;
+  z-index: 3;
+  transition: opacity 0.18s, transform 0.18s;
+}
+.tilted-card-figure:hover .tilted-card-caption {
+  opacity: 1;
+}
+@media (max-width: 640px) {
+  .tilted-card-figure {
+    width: 90vw;
+    height: 90vw;
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 98vw;
+    max-height: 98vw;
+  }
+  .tilted-card-inner, .tilted-card-img {
+    width: 100%;
+    height: 100%;
+  }
+}

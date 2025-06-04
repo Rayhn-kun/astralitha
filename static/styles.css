@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+#model-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.model-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    width: 220px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.model-card h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+.model-info {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+button.download-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.download-btn:hover {
+    background-color: #2980b9;
+}
+
+#upload-form {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    max-width: 400px;
+}
+
+#upload-form input[type="text"],
+#upload-form select,
+#upload-form input[type="file"] {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#upload-form button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#upload-form button:hover {
+    background-color: #1e8449;
+}
+
+#upload-message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#viewer-container {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    background-color: #222;
+    border-radius: 6px;
+    margin-top: 10px;
+    position: relative;
+}
+
+#viewer-section {
+    background: linear-gradient(135deg, #2d0066 0%, #0a0a23 60%, #1a0033 100%);
+    border-radius: 8px;
+    box-shadow: 0 0 32px #a78bfa55;
+    padding: 24px;
+    color: #fff;
+}
+
+model-viewer {
+    width: 100%;
+    height: 400px;
+    background: #181028;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px #a78bfa33;
+}
+
+#model-list .model-card {
+    background: #181028;
+    color: #fff;
+    border: 1px solid #a78bfa44;
+}
+
+button.download-btn, button.delete-btn, button.view-btn {
+    background: #7d3c98;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin: 2px 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.download-btn:hover {
+    background: #10b981;
+}
+
+button.delete-btn {
+    background: #ef4444;
+}
+
+button.delete-btn:hover {
+    background: #b91c1c;
+}
+
+button.view-btn {
+    background: #3b82f6;
+}
+
+button.view-btn:hover {
+    background: #1e40af;
+}

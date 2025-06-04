@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manajer Karakter 3D Anime</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- File ini hasil migrasi dari XORVEXCIC/static/index.html. Untuk viewer 3D, pastikan semua import JS mengarah ke static/. -->
+
+    <h1>Manajer Karakter 3D Anime</h1>
+
+    <section id="model-list-section">
+        <h2>Daftar Model 3D</h2>
+        <div id="model-list">
+            <!-- Models will be loaded here -->
+        </div>
+    </section>
+
+    <section id="upload-section">
+        <h2>Upload Model Baru</h2>
+        <form id="upload-form" enctype="multipart/form-data" autocomplete="off">
+            <label for="nama">Nama Karakter:</label><br />
+            <input type="text" id="nama" name="nama" required /><br />
+
+            <label for="asal_anime">Asal Anime:</label><br />
+            <input type="text" id="asal_anime" name="asal_anime" required /><br />
+
+            <label for="software">Software yang digunakan:</label><br />
+            <input type="text" id="software" name="software" required /><br />
+
+            <label for="status_rigging">Status Rigging:</label><br />
+            <select id="status_rigging" name="status_rigging" required>
+                <option value="Belum">Belum</option>
+                <option value="Proses">Proses</option>
+                <option value="Selesai">Selesai</option>
+            </select><br />
+
+            <label for="file">Pilih file model (.glb/.gltf):</label><br />
+            <input type="file" id="file" name="file" accept=".glb,.gltf" required /><br />
+
+            <button type="submit">Upload</button>
+        </form>
+        <div id="upload-message" aria-live="polite"></div>
+    </section>
+
+    <section id="viewer-section">
+        <h2>3D Viewer</h2>
+        <div id="viewer-container">
+            <!-- 3D model viewer will be here -->
+            <p>Pilih model dari daftar untuk melihat preview 3D.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="upload.js"></script>
+</body>
+</html>

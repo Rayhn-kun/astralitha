@@ -1,0 +1,6 @@
+# requirements.txt generated for Render deploy
+Flask
+flask-cors
+firebase-admin
+boto3
+python-dotenv

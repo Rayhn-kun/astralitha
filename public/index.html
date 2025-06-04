@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Astralitha 3D Model Gallery</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./scroll-float.css">
+  <link rel="stylesheet" href="./tilted-card.css">
+  <link rel="stylesheet" href="./particles-bg.css">
+  <link rel="stylesheet" href="./aurora-bg.css">
+  <link rel="stylesheet" href="./text-effects.css">
+  <style>
+    body { font-family: 'Poppins', 'Inter', Arial, sans-serif; background: #f7f7fa; margin: 0; }
+    .logo {
+      font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 2.1rem;
+      letter-spacing: 0.18em;
+      color: #a78bfa;
+      text-shadow: 0 2px 12px #7f5af0cc;
+    }
+    .logo .litha {
+      font-family: 'Poppins', 'Inter', Arial, sans-serif;
+      color: #fff;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+    .nav-links li a, button, .download-btn, input, select, label, .meta {
+      font-family: 'Inter', 'Poppins', Arial, sans-serif;
+    }
+    .overview-models {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .overview-models model-viewer {
+      width: 180px;
+      height: 180px;
+      background: #181028;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #a78bfa33;
+    }
+    .blog-section {
+      background: #181028;
+      color: #fff;
+      border-radius: 16px;
+      margin: 3rem auto;
+      max-width: 900px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 2px 24px #a78bfa22;
+    }
+    .blog-section h2, .blog-section h3 {
+      color: #a78bfa;
+      font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+      letter-spacing: 0.12em;
+    }
+    .blog-section article { margin-bottom: 2.5rem; }
+    .blog-section p, .blog-section li { font-size: 1.08rem; line-height: 1.7; }
+    h1 { text-align: center; }
+    form { display: flex; gap: 10px; justify-content: center; margin-bottom: 24px; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+    .card { background: #f0f0f0; border-radius: 8px; box-shadow: 0 1px 4px #0002; padding: 12px; width: 260px; text-align: center; position: relative; }
+    .meta { font-size: 0.9em; color: #555; margin: 8px 0; }
+    button, .download-btn { margin: 4px 2px; padding: 6px 12px; border: none; border-radius: 4px; background: #3b82f6; color: #fff; cursor: pointer; }
+    button.delete { background: #ef4444; }
+    .download-btn { background: #10b981; text-decoration: none; display: inline-block; }
+    model-viewer { width: 100%; height: 220px; background: #222; border-radius: 6px; }
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 100;
+      background: linear-gradient(90deg, #181028 0%, #a78bfa 100%);
+      box-shadow: 0 2px 16px #a78bfa33;
+      transition: background 0.3s;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5rem 2rem;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 6px 16px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links li a:hover {
+      background: #a78bfa;
+      color: #181028;
+    }
+    .container {
+      margin-top: 90px;
+    }
+    @media (max-width: 700px) {
+      .navbar { flex-direction: column; gap: 1rem; padding: 0.5rem 0.5rem; }
+      .nav-links { gap: 1rem; }
+      .container { margin-top: 120px; }
+    }
+    .animated-text {
+      display: inline-block;
+      background: linear-gradient(90deg, #a78bfa 0%, #7f5af0 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation: highlight-fade 2.5s ease-in-out infinite alternate;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: filter 0.2s;
+    }
+    @keyframes highlight-fade {
+      0% { filter: brightness(1.1) drop-shadow(0 0 8px #a78bfa88); }
+      100% { filter: brightness(1.5) drop-shadow(0 0 16px #7f5af0cc); }
+    }
+    .animated-section {
+      animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) both;
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .text-pressure {
+      display: inline-block;
+      font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #fff;
+      background: linear-gradient(90deg, #a78bfa 0%, #7f5af0 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 12px #7f5af0cc);
+      transition: font-variation-settings 0.2s, filter 0.2s;
+      will-change: font-variation-settings, filter;
+      user-select: none;
+    }
+    @media (max-width: 700px) {
+      .text-pressure { font-size: 1.3rem; }
+    }
+    .hero-section {
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-section h1 {
+      font-size: 3rem;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+    }
+    .hero-section h1:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: -8px;
+      left: 0;
+      background: linear-gradient(90deg, #a78bfa 0%, #7f5af0 100%);
+      animation: shine 1.5s infinite;
+    }
+    @keyframes shine {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .hero-section p {
+      font-size: 1.2rem;
+      margin: 16px 0 32px 0;
+      color: #ddd;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+    .upload-section {
+      background: #181028;
+      color: #fff;
+      border-radius: 16px;
+      margin: 3rem auto;
+      max-width: 900px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 2px 24px #a78bfa22;
+    }
+    .upload-section h2 {
+      color: #a78bfa;
+      font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.5rem;
+    }
+    .upload-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .upload-form label {
+      font-weight: 500;
+      color: #ddd;
+    }
+    .upload-form input {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background: #222;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .upload-form button {
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background: #3b82f6;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .upload-form button:hover {
+      background: #2563eb;
+    }
+    .gallery-section {
+      padding: 2rem 0;
+    }
+    .gallery-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #a78bfa;
+      font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+      letter-spacing: 0.12em;
+    }
+    .footer-section {
+      text-align: center;
+      padding: 1.5rem 0;
+      background: #181028;
+      color: #ddd;
+      position: relative;
+      overflow: hidden;
+    }
+    .footer-section .ascii-text {
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre;
+      font-size: 0.9rem;
+      color: #a78bfa;
+      position: relative;
+      display: inline-block;
+    }
+    .footer-section .ascii-text:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: -8px;
+      left: 0;
+      background: linear-gradient(90deg, #a78bfa 0%, #7f5af0 100%);
+      animation: shine 1.5s infinite;
+    }
+    @keyframes shine {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+  </style>
+</head>
+<body class="blob-cursor">
+    <div id="particles-bg"></div>
+    <div id="aurora-bg"></div>
+    <div id="splash-cursor" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:50;pointer-events:none;"></div>
+    <!-- Hero Section -->
+    <section class="hero-section animated-section scroll-reveal">
+      <h1 class="text-pressure shiny-text gradient-text split-text metallic-paint">ASTRALITHA</h1>
+      <p class="gradient-text blur-text scroll-float decrypted-text" data-text="Sistem penyelamatan antariksa inovatif untuk misi Mars, Bulan, dan dunia ekstrim lain. Menggabungkan drone pengintai, rover berat, dan pod penyelamat lipat—semua didukung AI, energi terbarukan, dan teknologi komunikasi cahaya.">
+        Sistem penyelamatan antariksa inovatif untuk misi Mars, Bulan, dan dunia ekstrim lain. Menggabungkan drone pengintai, rover berat, dan pod penyelamat lipat—semua didukung AI, energi terbarukan, dan teknologi komunikasi cahaya.
+      </p>
+      <div id="tilted-card-demo" style="display:flex;justify-content:center;margin:32px 0 0 0;"></div>
+    </section>
+    <!-- About/Highlight Section -->
+    <section class="about-section animated-section scroll-reveal" style="background:#181028;color:#fff;border-radius:18px;max-width:900px;margin:2.5rem auto 2.5rem auto;padding:2.5rem 2rem;box-shadow:0 2px 24px #a78bfa22;">
+      <h2 class="split-text gradient-text variable-proximity" data-vp-label="Highlight Astralitha">Highlight Astralitha</h2>
+      <ul style="font-size:1.13rem;line-height:1.7;margin:1.5rem 0 2.5rem 0;list-style:square inside;">
+        <li class="count-up shiny-text scroll-reveal">Drone otonom: pemetaan & pencarian korban dengan kamera termal & radar UWB.</li>
+        <li class="count-up shiny-text scroll-reveal">Rover modular: roda superelastis, suspensi kneeling, sensor canggih, medan ekstrem.</li>
+        <li class="count-up shiny-text scroll-reveal">Pod penyelamat origami: shelter lipat ringan, filter CO₂, generator oksigen mini.</li>
+        <li class="count-up shiny-text scroll-reveal">Komunikasi cahaya (Li-Fi): jaringan LED, kecepatan tinggi, bebas interferensi.</li>
+        <li class="count-up shiny-text scroll-reveal">AI navigasi: SLAM, A*, sensor visual/radar, jalur optimal otomatis.</li>
+        <li class="count-up shiny-text scroll-reveal">Material berkelanjutan: aluminium & karbon daur ulang, panel surya fleksibel.</li>
+      </ul>
+      <div class="animated-section" style="margin-bottom:1.5rem;">
+        <span class="glitch-text blur-text scroll-reveal metallic-paint" data-text="Misi utama: Menyelamatkan kru, mengurangi jejak karbon, dan menyatukan inovasi kosmik.">
+          Misi utama: Menyelamatkan kru, mengurangi jejak karbon, dan menyatukan inovasi kosmik.
+        </span>
+      </div>
+      <div class="animated-section" style="margin-bottom:1.5rem;">
+        <span class="split-text scrambled-text variable-proximity scroll-float" data-scramble="true">Roda NiTi superelastis, radar UWB/SAR, kamera termal, origami komposit, panel surya & MOXIE: teknologi masa depan untuk eksplorasi luar angkasa.</span>
+      </div>
+      <div class="animated-section" style="margin-bottom:1.5rem;">
+        <span class="gradient-text count-up scroll-reveal">Material utama dari daur ulang & bioplastik. Panel surya fleksibel, konsumsi daya rendah. Sistem modular, mudah dirawat & di-upgrade.</span>
+      </div>
+      <div style="margin-top:2.5rem;text-align:center;">
+        <a href="../astralithamarsmoon(1)%20(1).pdf" download class="download-btn magnet glare-hover pixel-transition" style="font-size:1.1rem;padding:12px 32px;margin:0 auto;display:inline-block;">Baca Blueprint Lengkap (PDF)</a>
+        <div style="font-size:0.95rem;color:#a78bfa;margin-top:8px;">(File PDF akan diunduh, bukan ditampilkan langsung)</div>
+      </div>
+    </section>
+    <!-- Overview Gallery Section -->
+    <section class="overview-gallery-section animated-section scroll-reveal">
+      <h2 class="shiny-text split-text circular-text">Overview 3D Model Gallery</h2>
+      <div id="circular-gallery-overview" style="width:100vw;max-width:100vw;height:420px;position:relative;margin:0 auto 32px auto;z-index:10;"></div>
+    </section>
+    <!-- Upload Section -->
+    <section class="upload-section animated-section scroll-reveal ribbons">
+      <h2 class="gradient-text split-text variable-proximity" data-vp-label="Upload Model 3D Baru">Upload Model 3D Baru</h2>
+      <form id="uploadForm" class="upload-form">
+        <div class="form-row">
+          <label for="file">File Model (.glb):</label>
+          <input type="file" id="file" name="file" accept=".glb" required>
+        </div>
+        <button type="submit" class="magnet glare-hover pixel-transition">Upload</button>
+      </form>
+      <div id="upload-message"></div>
+    </section>
+    <!-- Gallery Section -->
+    <section class="gallery-section animated-section scroll-reveal">
+      <h2 class="split-text gradient-text variable-proximity" data-vp-label="Daftar Model 3D">Daftar Model 3D</h2>
+      <div id="gallery"></div>
+    </section>
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section animated-section scroll-reveal star-border">
+      <h2 class="scroll-float shiny-text split-text metallic-paint variable-proximity" data-vp-label="Pengembangan Lanjut: Sistem Penyelamatan Astralitha">Pengembangan Lanjut: Sistem Penyelamatan Astralitha</h2>
+      <article class="animated-section">
+        <h3 class="animated-text scroll-float">Desain Roda dan Suspensi untuk Medan Ekstrem – Atlas</h3>
+        <p class="decrypted-text" data-text="Atlas, rover modular utama dalam sistem ASTRALITHA, menggunakan roda superelastik berbahan paduan NiTi (Nitinol) dengan struktur mesh spiral. Material ini memungkinkan deformasi hingga 10% tanpa kerusakan permanen, ideal untuk menghadapi regolit kasar di Bulan dan bebatuan tajam di Mars.">
+          Atlas, rover modular utama dalam sistem ASTRALITHA, menggunakan roda superelastik berbahan paduan NiTi (Nitinol) dengan struktur mesh spiral. Material ini memungkinkan deformasi hingga 10% tanpa kerusakan permanen, ideal untuk menghadapi regolit kasar di Bulan dan bebatuan tajam di Mars.
+        </p>
+        <p>Suspensi Rocker–Bogie tetap digunakan untuk menjaga stabilitas di medan tak rata. Atlas dilengkapi fitur kneeling—penurunan rangka hingga 20–30 cm menggunakan aktuator NiTi atau sistem hidrolik mini, memudahkan evakuasi korban menuju pod penyelamat. Konfigurasi enam roda independen memungkinkan pendakian lereng hingga 30° tanpa kehilangan kontak.</p>
+      </article>
+      <article class="animated-section">
+        <h3 class="animated-text scroll-float">Origami Rescue Pod: Struktur Tangguh, Ringan, dan Adaptif</h3>
+        <p class="decrypted-text" data-text="Rescue Pod dalam sistem ASTRALITHA adalah shelter lipat yang memanfaatkan komposit karbon-polimer berdaya ingat bentuk (shape memory). Terinspirasi pola Miura-ori dan riset NASA Langley, pod ini dapat mengembang otomatis lewat panas atau sinar UV.">
+          Rescue Pod dalam sistem ASTRALITHA adalah shelter lipat yang memanfaatkan komposit karbon-polimer berdaya ingat bentuk (shape memory). Terinspirasi pola Miura-ori dan riset NASA Langley, pod ini dapat mengembang otomatis lewat panas atau sinar UV.
+        </p>
+        <ul>
+          <li>O₂ darurat dan sistem sirkulasi tertutup</li>
+          <li>Sensor biometrik</li>
+          <li>Penempatan via winch atau dek kneeling Atlas</li>
+          <li>Tidak memerlukan motor berat; cukup aktivasi termal material</li>
+        </ul>
+      </article>
+      <article class="animated-section">
+        <h3 class="animated-text scroll-float">Drone Lintas-Platform Mars dan Bulan – Astraeus & Astraluna</h3>
+        <p><b>Astraeus</b> adalah drone sayap tetap untuk misi pengintaian atmosfer Mars. Namanya berasal dari Titan malam Yunani, “penguasa bintang”, menggambarkan perannya sebagai pengembara langit tipis Mars. Sayap panjang dengan aspek rasio tinggi menghasilkan gaya angkat optimal. Rotor ganda mempermudah manuver dan stabilisasi.</p>
+        <ul>
+          <li>Struktur komposit ringan berlapis reflektif</li>
+          <li>Sensor IMU, kamera stereo, altimeter LiDAR</li>
+          <li>AI Navigation (SLAM + A*) dan visual odometry</li>
+          <li>Kecepatan jelajah rendah untuk observasi permukaan dan pencarian korban</li>
+        </ul>
+        <p><b>Astraluna</b> adalah drone loncat dengan sistem dorongan mikro-roket (~400 N), memungkinkan lompatan balistik untuk melintasi medan terjal Bulan. Nama ini menggabungkan astral (berbintang) dan Luna (dewi Bulan Romawi), menegaskan keselarasan mitologis dan ilmiah.</p>
+        <ul>
+          <li>Bobot 5–10 kg</li>
+          <li>Navigasi mandiri dengan radar UWB, kamera multispektral, dan INS</li>
+          <li>Komunikasi UHF ke Atlas</li>
+        </ul>
+      </article>
+      <article class="animated-section">
+        <h3 class="animated-text scroll-float">Sistem Energi, Navigasi, dan Komunikasi</h3>
+        <p class="decrypted-text" data-text="Atlas dan komponen lain dilapisi panel surya film-tipis berbasis GaAs multi-junction. Distribusi daya dikendalikan oleh sistem DC-DC Converter dan PDU untuk menyuplai energi ke motor, sensor, dan unit drone. Unit Mini-MOXIE terintegrasi di dalam Warm Electronics Box (WEB), mengekstrak oksigen dari CO₂ via solid oxide electrolysis.">
+          Atlas dan komponen lain dilapisi panel surya film-tipis berbasis GaAs multi-junction. Distribusi daya dikendalikan oleh sistem DC-DC Converter dan PDU untuk menyuplai energi ke motor, sensor, dan unit drone. Unit Mini-MOXIE terintegrasi di dalam Warm Electronics Box (WEB), mengekstrak oksigen dari CO₂ via solid oxide electrolysis.
+        </p>
+        <p>Atlas dibekali sensor LiDAR 3D, kamera termal, radar UWB, IMU, dan kamera stereo. AI internal menjalankan algoritma SLAM untuk membangun peta lokal dan A* untuk penentuan rute. Komunikasi jarak jauh menggunakan modul RF UHF/VHF ke satelit atau orbit relay, serta Li-Fi untuk komunikasi internal antar modul.</p>
+      </article>
+      <article class="animated-section">
+        <h3 class="animated-text">Visualisasi Teknis dan Estetika</h3>
+        <p>Visual desain ASTRALITHA mencerminkan fungsionalitas dan estetika kosmik: potongan semi-cutaway memperlihatkan interior Warm Electronics Box, slot drone, dan konfigurasi Rescue Pod. Material utama: aluminium daur ulang bertekstur matte untuk perlindungan termal. Warna sistem disesuaikan tema: putih untuk pod medis, abu-abu untuk logistik, merah/oranye untuk Astraeus, putih-perak/ungu untuk Astraluna, perak-biru untuk Atlas.</p>
+      </article>
+      <article class="animated-section">
+        <h3 class="animated-text">Keselarasan Tematik ASTRALITHA: Identitas Kosmik</h3>
+        <p>Astraeus: pengintai Mars yang mengembara “di antara bintang”. Atlas: pilar penyelamat, menopang sistem dan korban. Astraluna: loncatan harapan di senyapnya malam Bulan. Nama-nama dipilih dari akar bahasa klasik dengan latar mitologis dan etimologis yang mendalam, memperkuat identitas futuristik bertema langit dari sistem penyelamatan ASTRALITHA—sang penjaga cahaya ungu dalam gelapnya angkasa.</p>
+      </article>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-section animated-section scroll-reveal">
+      <div class="ascii-text rotating-text">ASTRALITHA © 2025</div>
+    </footer>
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section animated-section scroll-reveal" style="background:#181028;margin:0 auto 0 auto;padding:0 0 48px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <h2 class="gradient-text split-text variable-proximity" data-vp-label="Contact Us" style="margin-bottom:18px;">Contact Us</h2>
+      <!-- ProfileCard HTML include -->
+      <div id="profile-card-container"></div>
+    </section>
+    <link rel="stylesheet" href="./ProfileCard.css">
+    <script>
+    // Inject ProfileCard HTML ke contact section
+    fetch('./ProfileCard.html').then(r=>r.text()).then(html=>{
+      document.getElementById('profile-card-container').innerHTML = html;
+    });
+    </script>
+    <script src="./particles-bg.js"></script>
+    <script src="./aurora-bg.js"></script>
+    <script src="./splash-cursor.js"></script>
+    <script src="./tilted-card.js"></script>
+    <script src="./circular-gallery.js"></script>
+    <script>
+      // Ambil semua model .glb di static/models/ untuk overview gallery
+      const modelList = [
+        { image: 'static/models/8ae87d79b6543772d0c64708c5677751.glb', text: 'Atlas' },
+        { image: 'static/models/ccfb9bc59666b34e8d99e1ed7e563e41.glb', text: 'Rescue Pod' },
+        { image: 'static/models/948ae0c26aad5010f5296d6f3c795336.glb', text: 'Astraeus' },
+        { image: 'static/models/06b5ed16640d276a5b781202e62c6213.glb', text: 'Astraluna' },
+        { image: 'static/models/0bfb520ddf3720b2acb9804b51b7db62.glb', text: 'Drone' },
+        { image: 'static/models/544f6b274f7750658c418dd36f3845a3.glb', text: 'Module' },
+        { image: 'static/models/79ae790c0ec4ebeae7e50d1825ead3b2.glb', text: 'Unit' },
+        { image: 'static/models/a62f09b0dbb80c2990cafc8b03878920.glb', text: 'Komponen' },
+        { image: 'static/models/bd9aa6bb0818075406b255a2894777fb.glb', text: 'Part' },
+        { image: 'static/models/d50a2d4b11946c529a95af936d51be13.glb', text: 'Element' },
+        { image: 'static/models/da1990b9be0f61d781395f53e97c2086.glb', text: 'Device' },
+        { image: 'static/models/8f97841f256666fcc892bdc802efbe7a.glb', text: 'Other' }
+      ];
+      // Ganti CircularGallery agar pakai thumbnail 3D (model-viewer snapshot) dan label sesuai model
+      window.addEventListener('DOMContentLoaded', function() {
+        if (window.CircularGallery) {
+          new window.CircularGallery(document.getElementById('circular-gallery-overview'), {
+            items: modelList.map(m => ({
+              image: m.image.replace('.glb', '.png'), // fallback: pakai .png snapshot jika ada
+              text: m.text
+            })),
+            bend: 3,
+            textColor: '#a78bfa',
+            borderRadius: 0.08,
+            font: 'bold 22px Orbitron, Poppins, Arial, sans-serif'
+          });
+        }
+      });
+      // Tampilkan TiltedCard dengan placeholder jika model utama belum dipilih
+      document.addEventListener('DOMContentLoaded', function() {
+        const card = createTiltedCard({
+          imageSrc: '',
+          altText: 'Belum ada model utama',
+          captionText: 'Belum ada model utama',
+          overlayText: '<div style=\'margin:0 auto;text-align:center;padding:32px 0;\'><span style=\'color:#a78bfa;font-weight:600;font-size:1.1rem;\'>Pilih model utama untuk preview 3D di sini</span></div>',
+          width: 320,
+          height: 320,
+          rotateAmplitude: 10,
+          scaleOnHover: 1.08
+        });
+        document.getElementById('tilted-card-demo').appendChild(card);
+      });
+    </script>
+    <header id="main-header" class="sticky-header">
+      <nav class="navbar">
+        <div class="logo metallic-paint">Astra<span class="litha">litha</span></div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#login">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="overview-models animated-section">
+      <model-viewer src="static/models/8ae87d79b6543772d0c64708c5677751.glb" camera-controls auto-rotate></model-viewer>
+      <model-viewer src="static/models/ccfb9bc59666b34e8d99e1ed7e563e41.glb" camera-controls auto-rotate></model-viewer>
+      <model-viewer src="static/models/948ae0c26aad5010f5296d6f3c795336.glb" camera-controls auto-rotate></model-viewer>
+    </div>
+    <script>
+    async function fetchFiles() {
+      const res = await fetch('/files');
+      const files = await res.json();
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+      files.forEach(file => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <model-viewer src="${file.url}" camera-controls auto-rotate background-color="#222" alt="${file.name}"></model-viewer>
+          <div class="meta">
+            <b>${file.name}</b><br>
+            Size: ${(file.size/1024/1024).toFixed(2)} MB<br>
+            Uploaded: ${new Date(file.lastModified).toLocaleString()}
+          </div>
+          <a class="download-btn" href="${file.url}" download>Download</a>
+          <button class="delete" onclick="deleteFile('${file.name}')">Delete</button>
+        `;
+        gallery.appendChild(card);
+      });
+    }
+
+    async function deleteFile(filename) {
+      if (!confirm('Delete this file?')) return;
+      const res = await fetch(`/file/${filename}`, { method: 'DELETE' });
+      if (res.ok) fetchFiles();
+      else alert('Failed to delete file.');
+    }
+
+    document.getElementById('uploadForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const fileInput = document.getElementById('file');
+      const file = fileInput.files[0];
+      if (!file) return alert('Select a .glb file!');
+      if (!file.name.toLowerCase().endsWith('.glb')) return alert('Only .glb files allowed!');
+      if (file.size > 50 * 1024 * 1024) return alert('Max file size is 50MB!');
+      const formData = new FormData();
+      formData.append('model', file);
+      const res = await fetch('/upload', { method: 'POST', body: formData });
+      if (res.ok) {
+        fileInput.value = '';
+        fetchFiles();
+      } else {
+        const err = await res.json();
+        alert('Upload failed: ' + (err.error || 'Unknown error'));
+      }
+    });
+
+    fetchFiles();
+  </script>
+<script src="./decrypted-text.js"></script>
+<script>
+// Inisialisasi efek text lanjutan setelah DOM ready
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.circular-text').forEach(el => window.circularText && window.circularText(el, 90));
+  document.querySelectorAll('.falling-text').forEach(el => window.fallingText && window.fallingText(el));
+  document.querySelectorAll('.ascii-text').forEach(el => window.asciiText && window.asciiText(el, el.textContent));
+  document.querySelectorAll('.scrambled-text').forEach(el => window.scrambledText && window.scrambledText(el, el.textContent));
+});
+// Highlight menu aktif
+(function(){
+  const links = document.querySelectorAll('.nav-links li a');
+  function updateActive() {
+    let hash = window.location.hash || '#home';
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href')===hash));
+  }
+  window.addEventListener('hashchange', updateActive);
+  updateActive();
+})();
+</script>
+<script src="./scroll-float.js"></script>
+<script src="./text-effects.js"></script>
+<script>
+// Efek VariableProximity untuk subjudul
+window.addEventListener('DOMContentLoaded', function() {
+  function applyVariableProximity(el) {
+    if (!el) return;
+    const label = el.getAttribute('data-vp-label') || el.textContent;
+    el.style.fontFamily = 'Roboto Flex, Orbitron, Poppins, Arial, sans-serif';
+    el.style.fontVariationSettings = "'wght' 400, 'opsz' 9";
+    el.addEventListener('mousemove', function(e) {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const radius = 100;
+      el.innerHTML = '';
+      label.split('').forEach((c, i) => {
+        const span = document.createElement('span');
+        span.textContent = c;
+        span.style.display = 'inline-block';
+        const cx = (rect.width / label.length) * i + (rect.width / label.length) / 2;
+        const cy = rect.height / 2;
+        const dist = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
+        const norm = Math.max(0, Math.min(1, 1 - dist / radius));
+        const wght = 400 + (1000 - 400) * norm;
+        const opsz = 9 + (40 - 9) * norm;
+        span.style.fontVariationSettings = `'wght' ${wght}, 'opsz' ${opsz}`;
+        el.appendChild(span);
+      });
+    });
+    el.addEventListener('mouseleave', function() {
+      el.innerHTML = '';
+      label.split('').forEach((c) => {
+        const span = document.createElement('span');
+        span.textContent = c;
+        span.style.display = 'inline-block';
+        span.style.fontVariationSettings = "'wght' 400, 'opsz' 9";
+        el.appendChild(span);
+      });
+    });
+    // Initial render
+    el.dispatchEvent(new Event('mouseleave'));
+  }
+  document.querySelectorAll('.variable-proximity').forEach(applyVariableProximity);
+});
+</script>
+<script>
+// Efek ScrambledText sederhana (tanpa React/GSAP, vanilla JS)
+window.addEventListener('DOMContentLoaded', function() {
+  function scrambleText(el, chars = '.:', duration = 1200) {
+    if (!el) return;
+    const original = el.textContent;
+    let running = false;
+    function scramble() {
+      if (running) return;
+      running = true;
+      let frame = 0;
+      const maxFrame = Math.floor(duration/30);
+      const arr = original.split('');
+      const scrambleArr = arr.map(c => c);
+      const scrambleChars = chars.split('');
+      function tick() {
+        for (let i = 0; i < arr.length; i++) {
+          if (Math.random() < 0.5 && arr[i] !== ' ') {
+            scrambleArr[i] = scrambleChars[Math.floor(Math.random()*scrambleChars.length)];
+          } else {
+            scrambleArr[i] = arr[i];
+          }
+        }
+        el.textContent = scrambleArr.join('');
+        frame++;
+        if (frame < maxFrame) setTimeout(tick, 30);
+        else { el.textContent = original; running = false; }
+      }
+      tick();
+    }
+    el.addEventListener('pointermove', scramble);
+  }
+  document.querySelectorAll('[data-scramble]').forEach(el => scrambleText(el));
+});
+</script>
+</body>
+</html>

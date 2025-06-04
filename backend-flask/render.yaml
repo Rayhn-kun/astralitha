@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: flask-backend
+    env: python
+    buildCommand: ""
+    startCommand: python app.py
+    plan: free
+    envVars:
+      - key: R2_KEY
+        value: your_r2_key_here
+      - key: R2_SECRET
+        value: your_r2_secret_here
+      - key: R2_BUCKET
+        value: your_bucket_name
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        value: serviceAccountKey.json
