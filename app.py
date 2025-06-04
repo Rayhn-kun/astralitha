@@ -27,5 +27,9 @@ init_firebase()
 # Register blueprint for all API routes
 app.register_blueprint(routes)
 
+@app.route('/healthz')
+def healthz():
+    return "ok", 200
+
 if __name__ == '__main__':
     app.run(debug=True)
